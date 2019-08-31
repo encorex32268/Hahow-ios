@@ -18,6 +18,9 @@
 		9BCF04E12318CC1A00EBE91B /* DOFavoriteButton in Resources */ = {isa = PBXBuildFile; fileRef = 9BCF04DC2318CC1A00EBE91B /* DOFavoriteButton */; };
 		9BCF04E52318CD6B00EBE91B /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF04E42318CD6B00EBE91B /* MainCollectionViewController.swift */; };
 		9BCF04E72318D8DA00EBE91B /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF04E62318D8DA00EBE91B /* MainCollectionViewCell.swift */; };
+		9BCF04E923191BE500EBE91B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF04E823191BE500EBE91B /* ProfileViewController.swift */; };
+		9BCF04EB23191D7800EBE91B /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BCF04EA23191D7800EBE91B /* dog.png */; };
+		9BCF04F0231927A400EBE91B /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF04EF231927A400EBE91B /* PostData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		9BCF04DC2318CC1A00EBE91B /* DOFavoriteButton */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DOFavoriteButton; sourceTree = "<group>"; };
 		9BCF04E42318CD6B00EBE91B /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		9BCF04E62318D8DA00EBE91B /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BCF04E823191BE500EBE91B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9BCF04EA23191D7800EBE91B /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog.png; sourceTree = "<group>"; };
+		9BCF04EF231927A400EBE91B /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 				9BCF04BC2318CB4400EBE91B /* AppDelegate.swift */,
 				9BCF04C02318CB4400EBE91B /* Main.storyboard */,
 				9BCF04C32318CB4600EBE91B /* Assets.xcassets */,
+				9BCF04EA23191D7800EBE91B /* dog.png */,
 				9BCF04DA2318CC1A00EBE91B /* 照片 */,
 				9BCF04D82318CC1A00EBE91B /* 廣告 */,
 				9BCF04DC2318CC1A00EBE91B /* DOFavoriteButton */,
@@ -78,6 +85,8 @@
 				9BCF04C82318CB4600EBE91B /* Info.plist */,
 				9BCF04E42318CD6B00EBE91B /* MainCollectionViewController.swift */,
 				9BCF04E62318D8DA00EBE91B /* MainCollectionViewCell.swift */,
+				9BCF04E823191BE500EBE91B /* ProfileViewController.swift */,
+				9BCF04EF231927A400EBE91B /* PostData.swift */,
 			);
 			path = HaHow;
 			sourceTree = "<group>";
@@ -143,6 +152,7 @@
 				9BCF04E02318CC1A00EBE91B /* icon(把這裡面的icon丟進assets資料夾中) in Resources */,
 				9BCF04C72318CB4600EBE91B /* LaunchScreen.storyboard in Resources */,
 				9BCF04DE2318CC1A00EBE91B /* Profile Picture in Resources */,
+				9BCF04EB23191D7800EBE91B /* dog.png in Resources */,
 				9BCF04DF2318CC1A00EBE91B /* 照片 in Resources */,
 				9BCF04C42318CB4600EBE91B /* Assets.xcassets in Resources */,
 				9BCF04C22318CB4400EBE91B /* Main.storyboard in Resources */,
@@ -158,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BCF04F0231927A400EBE91B /* PostData.swift in Sources */,
 				9BCF04BD2318CB4400EBE91B /* AppDelegate.swift in Sources */,
 				9BCF04E72318D8DA00EBE91B /* MainCollectionViewCell.swift in Sources */,
+				9BCF04E923191BE500EBE91B /* ProfileViewController.swift in Sources */,
 				9BCF04E52318CD6B00EBE91B /* MainCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9B98DMZU5;
 				INFOPLIST_FILE = HaHow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +329,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lee.HaHow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -327,6 +340,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9B98DMZU5;
 				INFOPLIST_FILE = HaHow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lee.HaHow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -12,6 +12,7 @@ private let reuseIdentifier = "userCell"
 
 class MainCollectionViewController: UICollectionViewController {
     @IBOutlet weak var mainFlowLayout: UICollectionViewFlowLayout!
+    var  posts : [PostData] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,8 @@ mainFlowLayout.estimatedItemSize = mainFlowLayout.itemSize
         
         //伸縮
         
-        
+        posts = getPostDatas()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,15 +31,16 @@ mainFlowLayout.estimatedItemSize = mainFlowLayout.itemSize
         // Do any additional setup after loading the view.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+//        print("\(segue.identifier)")
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
 
@@ -49,19 +52,22 @@ mainFlowLayout.estimatedItemSize = mainFlowLayout.itemSize
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 5
+        return posts.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! MainCollectionViewCell
     
         // Configure the cell
+        
+        let post = posts[indexPath.row]
     
-        cell.avatarImageView.image = UIImage(named: "Profile Picture/Miranda.png")
-        cell.usernameLabel.text = "Miranda"
-        cell.timeLabel.text = "2019.08.23"
-        cell.photoImageView.image = UIImage(named: "照片/demo-01.jpg")
-        cell.contentLabel.text = "Time is money "
+        cell.avatarImageView.image = post.avatarImage
+        cell.usernameLabel.text = post.username
+        cell.timeLabel.text = post.time
+        cell.photoImageView.image = post.photo
+        cell.contentLabel.text = post.content
+        
         return cell
     }
 
@@ -96,4 +102,36 @@ mainFlowLayout.estimatedItemSize = mainFlowLayout.itemSize
     }
     */
 
+}
+
+
+func getPostDatas() -> [PostData]{
+    var posts : [PostData] = []
+    
+    
+    for index in 1...18 {
+        var namePhoto = ""
+        var indexString = String(index)
+        if index < 10{
+            indexString = "0\(index)"
+        }
+
+        
+        
+        if indexString == "07" || indexString == "11"{
+            namePhoto  = "照片/demo-\(indexString).jpeg"
+        }else{
+            namePhoto = "照片/demo-\(indexString).jpg"
+        }
+        
+        posts.append(
+            PostData(
+                avatarImage: UIImage(named: "Profile Picture/Miranda.png")!,
+                username: "Miranda",
+                time: "2019.05.23",
+                photo: UIImage(named: namePhoto)!,
+                content: "Courage and resolution are the spirit and soul of virtue. ")
+        )
+    }
+    return posts
 }
