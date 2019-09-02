@@ -290,10 +290,10 @@
             </objects>
             <point key="canvasLocation" x="-199.19999999999999" y="-142.57871064467767"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Post View Controller-->
         <scene sceneID="s4H-Yr-nUx">
             <objects>
-                <viewController id="NHm-UQ-1yZ" sceneMemberID="viewController">
+                <viewController id="NHm-UQ-1yZ" customClass="CreatePostViewController" customModule="HaHow" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dUu-ax-ZUT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -308,25 +308,48 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ri-bF-bQJ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ri-bF-bQJ">
                                 <rect key="frame" x="0.0" y="164" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="Keb-Np-wyT"/>
                                 </constraints>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwd-Z7-qly">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwd-Z7-qly" customClass="CustomNavigationBar" customModule="HaHow" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="ZwG-Ff-Xxr"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.28627450980000002" green="0.83529411760000005" blue="0.76862745099999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Title" id="ZQA-vM-mFU"/>
+                                    <navigationItem title="Title" id="ZQA-vM-mFU">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="CancelButton.png" id="ndP-sD-x2P">
+                                            <connections>
+                                                <action selector="cancelClicked:" destination="NHm-UQ-1yZ" id="MHi-f8-oLe"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="ZKt-dY-uLZ">
+                                            <connections>
+                                                <action selector="doneClicked:" destination="NHm-UQ-1yZ" id="JeA-6F-06p"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STd-7I-BmO">
+                                <rect key="frame" x="337" y="172" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="01f-3T-Xg4"/>
+                                    <constraint firstAttribute="width" constant="30" id="AlH-bH-h0D"/>
+                                </constraints>
+                                <state key="normal" image="CameraIcon"/>
+                                <connections>
+                                    <action selector="openCameraClicked:" destination="NHm-UQ-1yZ" eventType="touchUpInside" id="z7m-Be-sMV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -339,9 +362,15 @@
                             <constraint firstItem="2ri-bF-bQJ" firstAttribute="top" secondItem="k5k-vg-Ah0" secondAttribute="bottom" id="fk9-Ty-fOh"/>
                             <constraint firstItem="gea-n2-q2Z" firstAttribute="trailing" secondItem="k5k-vg-Ah0" secondAttribute="trailing" id="rEk-bK-db2"/>
                             <constraint firstItem="lwd-Z7-qly" firstAttribute="trailing" secondItem="gea-n2-q2Z" secondAttribute="trailing" id="sXb-Y8-TbM"/>
+                            <constraint firstItem="gea-n2-q2Z" firstAttribute="trailing" secondItem="STd-7I-BmO" secondAttribute="trailing" constant="8" id="uLB-PO-Oaq"/>
+                            <constraint firstItem="STd-7I-BmO" firstAttribute="top" secondItem="k5k-vg-Ah0" secondAttribute="bottom" constant="8" id="ud8-N8-mDz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gea-n2-q2Z"/>
                     </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="k5k-vg-Ah0" id="o6S-lX-hvQ"/>
+                        <outlet property="photoImageView" destination="2ri-bF-bQJ" id="xHe-aM-Qjc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBi-ti-l1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -349,6 +378,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CameraIcon" width="30" height="30"/>
+        <image name="CancelButton.png" width="24" height="24"/>
         <image name="CreatePostIcon" width="24" height="24"/>
         <image name="ProfileIcon" width="14" height="16"/>
         <image name="noface.png" width="14" height="14"/>

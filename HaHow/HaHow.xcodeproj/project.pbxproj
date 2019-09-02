@@ -21,6 +21,8 @@
 		9BCF04E923191BE500EBE91B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF04E823191BE500EBE91B /* ProfileViewController.swift */; };
 		9BCF04EB23191D7800EBE91B /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BCF04EA23191D7800EBE91B /* dog.png */; };
 		9BCF04F0231927A400EBE91B /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF04EF231927A400EBE91B /* PostData.swift */; };
+		9BCF04F2231CA3ED00EBE91B /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF04F1231CA3ED00EBE91B /* CustomNavigationBar.swift */; };
+		9BCF04F4231CA9ED00EBE91B /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF04F3231CA9ED00EBE91B /* CreatePostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		9BCF04E823191BE500EBE91B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9BCF04EA23191D7800EBE91B /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dog.png; sourceTree = "<group>"; };
 		9BCF04EF231927A400EBE91B /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		9BCF04F1231CA3ED00EBE91B /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		9BCF04F3231CA9ED00EBE91B /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		9BCF04BB2318CB4400EBE91B /* HaHow */ = {
 			isa = PBXGroup;
 			children = (
+				9BCF04F1231CA3ED00EBE91B /* CustomNavigationBar.swift */,
 				9BCF04BC2318CB4400EBE91B /* AppDelegate.swift */,
 				9BCF04C02318CB4400EBE91B /* Main.storyboard */,
 				9BCF04C32318CB4600EBE91B /* Assets.xcassets */,
@@ -87,6 +92,7 @@
 				9BCF04E62318D8DA00EBE91B /* MainCollectionViewCell.swift */,
 				9BCF04E823191BE500EBE91B /* ProfileViewController.swift */,
 				9BCF04EF231927A400EBE91B /* PostData.swift */,
+				9BCF04F3231CA9ED00EBE91B /* CreatePostViewController.swift */,
 			);
 			path = HaHow;
 			sourceTree = "<group>";
@@ -168,6 +174,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BCF04F2231CA3ED00EBE91B /* CustomNavigationBar.swift in Sources */,
+				9BCF04F4231CA9ED00EBE91B /* CreatePostViewController.swift in Sources */,
 				9BCF04F0231927A400EBE91B /* PostData.swift in Sources */,
 				9BCF04BD2318CB4400EBE91B /* AppDelegate.swift in Sources */,
 				9BCF04E72318D8DA00EBE91B /* MainCollectionViewCell.swift in Sources */,
